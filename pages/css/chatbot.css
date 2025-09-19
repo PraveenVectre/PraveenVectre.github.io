@@ -1,0 +1,92 @@
+/* Floating Button */
+#chatToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating Chat Window */
+#chatWindow {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    display: none;
+    flex-direction: column;
+    z-index: 9998;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#chatWindow.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Chat box */
+.chat-box {
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+/* Messages */
+.chat-message {
+    margin: 10px 0;
+    word-wrap: break-word;
+}
+
+.chat-user {
+    text-align: right;
+}
+
+.chat-bot {
+    text-align: left;
+}
+
+/* Mobile first */
+@media (max-width: 576px) {
+    #chatWindow {
+        bottom: 80px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        max-width: none;
+        border-radius: 8px;
+    }
+
+    .chat-box {
+        max-height: 50vh;
+    }
+
+    .card-header small {
+        font-size: 12px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 577px) and (max-width: 768px) {
+    #chatWindow {
+        max-width: 90%;
+        right: 5%;
+    }
+}
